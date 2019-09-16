@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main(){
+    int n, arr[100];
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+    for(int i = 0; i < n; i=i+2){
+        if(i % 2 == 0){
+            for(int j = i; j < n; j = j + 2){
+                if(arr[i] < arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    for(int i = 1; i < n; i = i + 2){
+        for(int j = i; j < n; j = j + 2){
+            if(arr[i] > arr[j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+}
