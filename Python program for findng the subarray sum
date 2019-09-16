@@ -1,0 +1,19 @@
+n=int(input())
+arr=list(map(int,input().split(' ')))
+def SubArraySum(arr, n):
+    result = 0
+ 
+    # Pick starting point
+    for i in range(0, n):
+ 
+        # Pick ending point
+        for j in range(i, n):
+ 
+            # sum subarray between 
+            # current starting and 
+            # ending points
+            for k in range(i, j + 1):
+                result += arr[k] 
+    return result
+s=SubArraySum(arr,n) 
+print(s)
